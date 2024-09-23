@@ -2,6 +2,10 @@
 
 A single-file, self-hosted link tree for easy and lightweight management of links.
 
+## Glance
+
+GitHub Page: https://undecv.github.io/Links/
+
 ## Features
 
 - Single file, single page.

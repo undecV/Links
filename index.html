@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Page title. -->
+    <title>Your page.</title>
+
+    <!-- Use a custom image for the favicon. -->
+    <!-- <link rel="icon" href="./assets/avatar.128.png"> -->
+
+    <!-- Use an emoji for the favicon. -->
+    <!-- Reference: https://css-tricks.com/emoji-as-a-favicon/ -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        body {
+
+            /* Use a solid color for the background. */
+            background-color: #222;
+
+            /* Use a custom image for the background. */
+            background: url('./assets/background.jpg') no-repeat center center fixed;
+
+            align-items: center;
+            background-size: cover;
+            color: #ccc;
+            display: flex;
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        a {
+            color: #ccc;
+        }
+
+        .container {
+            background: #0003;
+            border-radius: 15px;
+            margin: 20px 20px;
+            padding: 20px;
+            text-align: center;
+            width: 350px;
+        }
+
+        .avatar {
+            border-radius: 50%;
+            height: 120px;
+            margin-bottom: 15px;
+            width: 120px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        p.intro {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .block {
+            margin-bottom: 20px;
+        }
+
+        .link-block a {
+            align-items: center;
+            background-color: #0003;
+            border-radius: 30px;
+            color: white;
+            display: flex;
+            font-size: 16px;
+            justify-content: flex-start;
+            margin-bottom: 15px;
+            min-height: 70px;
+            /* 保證按鈕高度足夠放兩行文字 */
+            padding: 0 10px 0 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .link-block a:hover {
+            background-color: #0006;
+            box-shadow: 0 0 10px #0006;
+        }
+
+        .link-block a i {
+            font-size: 30px;
+            width: 60px;
+            text-align: center;
+        }
+
+        .link-block .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
+        }
+
+        .link-block .text .main {
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+        .link-block .text .sub {
+            font-size: 10px;
+            line-height: 1.2;
+        }
+
+        .image-block a {
+            display: block;
+            background-color: #0003;
+            /* border: 1px solid #ccc; */
+            padding: 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            /* color: #333; */
+            transition: box-shadow 0.3s;
+            font-size: 12px;
+        }
+
+        .image-block img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .image-block a:hover {
+            background-color: #0006;
+            box-shadow: 0 0 10px #0006;
+        }
+
+        .empty-block {
+            height: 10px;
+            /* background-color: #F00; */
+        }
+    
+        p.small-text {
+            font-size: 12px;
+            line-height: 0.3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Gravatar avatar. -->
+        <!-- The link should be https://docs.gravatar.com/api/avatars/images/{hash256_of_your_email}?=120 -->
+        <!-- Reference: https://docs.gravatar.com/api/avatars/images/ -->
+
+        <img src="https://gravatar.com/avatar/000000000000000000000000000000000000000000000000000000?s=120"
+            alt="Avatar" class="avatar">
+
+        <!-- Name -->
+        <header>
+            <h1>你的名字</h1>
+            <p>Your Name</p>
+        </header>
+
+        <!-- Introduction -->
+        <p class="intro">Here can give you a brief introduction.<br />
+            If it's a little longer, it can be branched.</p>
+    
+        <!-- Text Block -->
+        <!-- <div class="text-block">
+            <p>This is a text block where you can write some information or description about yourself or your projects.
+            </p>
+        </div> -->
+
+        <div class="link-block block">
+
+            <a href="https://t.me/" target="_blank">
+                <i class="fab fa-telegram"></i>
+                <div class="text">
+                    <div class="main">Join my Telegram</div>
+                    <div class="sub">Chat with me on Telegram</div>
+                </div>
+            </a>
+
+            <a href="https://line.me/" target="_blank">
+                <i class="fab fa-line"></i>
+                <div class="text">
+                    <div class="main">Connect with me on Line</div>
+                    <div class="sub">Chat with me on Line</div>
+                </div>
+            </a>
+
+            <a href="https://m.me/" target="_blank">
+                <i class="fab fa-facebook-messenger"></i>
+                <div class="text">
+                    <div class="main">Connect with me on Messenger</div>
+                    <div class="sub">Chat with me on Messenger</div>
+                </div>
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class="fab fa-facebook"></i>
+                <div class="text">
+                    <div class="main">Follow me on Facebook</div>
+                    <div class="sub">Join me on Facebook</div>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <div class="text">
+                    <div class="main">Follow me on Instagram</div>
+                    <div class="sub">Explore my latest photos and stories</div>
+                </div>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank">
+                <i class="fab fa-linkedin"></i>
+                <div class="text">
+                    <div class="main">Connect on LinkedIn</div>
+                    <div class="sub">Expand your professional network</div>
+                </div>
+            </a>
+
+            <a href="https://github.com/" target="_blank">
+                <i class="fab fa-github"></i>
+                <div class="text">
+                    <div class="main">Check my GitHub</div>
+                    <div class="sub">Explore my projects and contributions</div>
+                </div>
+            </a>
+
+            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">
+                <i class="fab fa-orcid"></i>
+                <div class="text">
+                    <div class="main">View my ORCID profile</div>
+                    <div class="sub">Discover my research contributions</div>
+                </div>
+            </a>
+
+            <a href="https://undecv.github.io" target="_blank">
+                <i class="fa-solid fa-blog"></i>
+                <div class="text">
+                    <div class="main">Visit my Blog</div>
+                    <div class="sub">Read my latest articles and thoughts</div>
+                </div>
+            </a>
+
+        </div>
+
+        
+        <!-- Image Link Block -->
+        <div class="image-block block">
+            <a href="https://placeholder.com" target="_blank">
+                <img src="https://via.placeholder.com/320x180" alt="Placeholder image">
+                Test string.
+            </a>
+        </div>
+        
+        <div class="link-block block">
+
+            <a href="tel:+886900000000" target="_blank">
+                <i class="fa-solid fa-phone"></i>
+                <div class="text">
+                    <div class="main">Call me</div>
+                    <div class="sub">+886-900-000-000</div>
+                </div>
+            </a>
+
+            <a href="mailto:firstname@example.com" target="_blank">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="text">
+                    <div class="main">Email me</div>
+                    <div class="sub">firstname@example.com</div>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Empty Block -->
+        <div class="empty-block"></div>
+
+        <!-- Text Block -->
+        <div class="text-block block">
+            <p class="small-text">Webpage design by <a href="https://github.com/undecv">undecV</a>.</p>
+            <p class="small-text">You can indicate copyright here.</a>
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>

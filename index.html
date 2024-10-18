@@ -19,7 +19,6 @@
 
     <style>
         body {
-
             /* Use a solid color for the background. */
             background-color: #222;
 
@@ -29,7 +28,7 @@
 
             align-items: center;
             background-size: cover;
-            color: #ccc;
+            color: white;
             display: flex;
             font-family: Arial, sans-serif;
             justify-content: center;
@@ -38,42 +37,70 @@
         }
 
         a {
-            color: #ccc;
+            color: #ddd;
         }
 
         .container {
             background: #0003;
             border-radius: 15px;
-            margin: 20px 20px;
+            margin: 40px 20px;
             padding: 20px;
             text-align: center;
             width: 350px;
+            backdrop-filter: blur(3px);
         }
 
         .avatar {
             border-radius: 50%;
             height: 120px;
-            margin-bottom: 15px;
+            margin: 5px 0 20px 0;
             width: 120px;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        header p {
-            margin: 0;
-            font-size: 16px;
-        }
-
-        p.intro {
-            font-size: 14px;
-            margin-bottom: 20px;
+        header {
+            text-align: center;
         }
 
         .block {
             margin-bottom: 20px;
+        }
+
+        .blank-block {
+            height: 5px;
+            margin-bottom: 10px;
+            /* background-color: #F00; */
+        }
+
+        .text-block {
+            text-align: center;
+            padding: 0 20px 0 20px;
+            font-size: 16px;
+            /* background-color: #F00; */
+        }
+        
+        .text-block p {
+            margin: 0;
+        }
+
+        .text-block.left {
+            text-align: left;
+        }
+        .text-block.small {
+            font-size: 14px;
+        }
+
+        .text-block header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .text-block header p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .text-block footer {
+            font-size: 12px;
         }
 
         .link-block a {
@@ -85,7 +112,7 @@
             font-size: 16px;
             justify-content: flex-start;
             margin-bottom: 15px;
-            min-height: 70px;
+            min-height: 60px;
             /* 保證按鈕高度足夠放兩行文字 */
             padding: 0 10px 0 10px;
             text-decoration: none;
@@ -125,7 +152,7 @@
             background-color: #0003;
             /* border: 1px solid #ccc; */
             padding: 10px;
-            border-radius: 10px;
+            border-radius: 30px;
             text-decoration: none;
             /* color: #333; */
             transition: box-shadow 0.3s;
@@ -134,22 +161,12 @@
 
         .image-block img {
             width: 100%;
-            border-radius: 10px;
+            border-radius: 20px;
         }
 
         .image-block a:hover {
             background-color: #0006;
             box-shadow: 0 0 10px #0006;
-        }
-
-        .empty-block {
-            height: 10px;
-            /* background-color: #F00; */
-        }
-    
-        p.small-text {
-            font-size: 12px;
-            line-height: 0.3;
         }
     </style>
 </head>
@@ -160,19 +177,22 @@
         <!-- The link should be https://docs.gravatar.com/api/avatars/images/{hash256_of_your_email}?=120 -->
         <!-- Reference: https://docs.gravatar.com/api/avatars/images/ -->
 
-        <img src="https://gravatar.com/avatar/000000000000000000000000000000000000000000000000000000?s=120"
-            alt="Avatar" class="avatar">
+        <img src="https://gravatar.com/avatar/000000000000000000000000000000000000000000000000000000?s=120" alt="Avatar"
+            class="avatar">
 
         <!-- Name -->
-        <header>
-            <h1>你的名字</h1>
-            <p>Your Name</p>
-        </header>
+        <div class="text-block block">
+            <header>
+                <h1>你的名字</h1>
+                <p>Your Name</p>
+            </header>
+        </div>
 
-        <!-- Introduction -->
-        <p class="intro">Here can give you a brief introduction.<br />
-            If it's a little longer, it can be branched.</p>
-    
+        <!-- Text Block -->
+        <div class="text-block block small">
+            <p>Here can give you a brief introduction.<br />If it's a little longer, it can be branched.</p>
+        </div>
+
         <!-- Text Block -->
         <!-- <div class="text-block">
             <p>This is a text block where you can write some information or description about yourself or your projects.
@@ -180,7 +200,6 @@
         </div> -->
 
         <div class="link-block block">
-
             <a href="https://t.me/" target="_blank">
                 <i class="fab fa-telegram"></i>
                 <div class="text">
@@ -188,7 +207,20 @@
                     <div class="sub">Chat with me on Telegram</div>
                 </div>
             </a>
+        </div>
 
+        <!-- Text Block -->
+        <div class="text-block block left">
+            <p>This web template supports:</p>
+            <ul>
+                <li>Link (Button) block</li>
+                <li>Image block</li>
+                <li>Text block</li>
+                <li>Blank block</li>
+            </ul>
+        </div>
+
+        <div class="link-block block">
             <a href="https://line.me/" target="_blank">
                 <i class="fab fa-line"></i>
                 <div class="text">
@@ -196,7 +228,9 @@
                     <div class="sub">Chat with me on Line</div>
                 </div>
             </a>
+        </div>
 
+        <div class="link-block block">
             <a href="https://m.me/" target="_blank">
                 <i class="fab fa-facebook-messenger"></i>
                 <div class="text">
@@ -204,7 +238,9 @@
                     <div class="sub">Chat with me on Messenger</div>
                 </div>
             </a>
+        </div>
 
+        <div class="link-block block">
             <a href="https://www.facebook.com/" target="_blank">
                 <i class="fab fa-facebook"></i>
                 <div class="text">
@@ -212,7 +248,9 @@
                     <div class="sub">Join me on Facebook</div>
                 </div>
             </a>
+        </div>
 
+        <div class="link-block block">
             <a href="https://www.instagram.com/" target="_blank">
                 <i class="fab fa-instagram"></i>
                 <div class="text">
@@ -220,7 +258,9 @@
                     <div class="sub">Explore my latest photos and stories</div>
                 </div>
             </a>
+        </div>
 
+        <div class="link-block block">
             <a href="https://linkedin.com" target="_blank">
                 <i class="fab fa-linkedin"></i>
                 <div class="text">
@@ -228,7 +268,9 @@
                     <div class="sub">Expand your professional network</div>
                 </div>
             </a>
+        </div>
 
+        <div class="link-block block">
             <a href="https://github.com/" target="_blank">
                 <i class="fab fa-github"></i>
                 <div class="text">
@@ -236,7 +278,9 @@
                     <div class="sub">Explore my projects and contributions</div>
                 </div>
             </a>
+        </div>
 
+        <div class="link-block block">
             <a href="https://orcid.org/0000-0000-0000-0000" target="_blank">
                 <i class="fab fa-orcid"></i>
                 <div class="text">
@@ -244,7 +288,9 @@
                     <div class="sub">Discover my research contributions</div>
                 </div>
             </a>
+        </div>
 
+        <div class="link-block block">
             <a href="https://undecv.github.io" target="_blank">
                 <i class="fa-solid fa-blog"></i>
                 <div class="text">
@@ -252,10 +298,8 @@
                     <div class="sub">Read my latest articles and thoughts</div>
                 </div>
             </a>
-
         </div>
 
-        
         <!-- Image Link Block -->
         <div class="image-block block">
             <a href="https://placehold.co/" target="_blank">
@@ -263,9 +307,8 @@
                 Test string.
             </a>
         </div>
-        
-        <div class="link-block block">
 
+        <div class="link-block block">
             <a href="tel:+886900000000" target="_blank">
                 <i class="fa-solid fa-phone"></i>
                 <div class="text">
@@ -273,7 +316,9 @@
                     <div class="sub">+886-900-000-000</div>
                 </div>
             </a>
+        </div>
 
+        <div class="link-block block">
             <a href="mailto:firstname@example.com" target="_blank">
                 <i class="fa-solid fa-envelope"></i>
                 <div class="text">
@@ -284,16 +329,16 @@
 
         </div>
 
-        <!-- Empty Block -->
-        <div class="empty-block"></div>
+        <!-- Blank Block -->
+        <div class="blank-block"></div>
 
         <!-- Text Block -->
         <div class="text-block block">
-            <p class="small-text">Webpage design by <a href="https://github.com/undecv">undecV</a>.</p>
-            <p class="small-text">You can indicate copyright here.</a>
-            </p>
+            <footer>
+                <p class="footer">Webpage design by <a href="https://github.com/undecv">undecV</a>.</p>
+                <p class="footer">You can indicate copyright here.</p>
+            </footer>
         </div>
-
     </div>
 </body>
 

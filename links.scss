@@ -1,0 +1,227 @@
+:root {
+    --border-radius: 2rem;
+}
+
+:root {
+    --bg-color: #fff;
+    --text-color: #222;
+    --container-bg-color: #eeea;
+    --block-bg: #ddda;
+    --block-hover-bg: #ccca;
+    --link-color: #5286bc;
+    --link-active-color: #9c71b7;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #222;
+        --text-color: #fff;
+        --container-bg-color: #333a;
+        --block-bg: #444a;
+        --block-hover-bg: #555a;
+        --link-color: #8cb6e1;
+        --link-active-color: #cfabdf;
+    }
+}
+
+body {
+    background: url(https://placehold.co/1920x1080) no-repeat center center fixed;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background-color: var(--bg-color);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+div.container {
+    background: var(--container-bg-color);
+    border-radius: var(--border-radius);
+    margin: 2rem 1rem;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    min-width: 20rem;
+    width: 20rem;
+    backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.header-block {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .icon {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 0 0 1rem 0;
+
+        img {
+            border-radius: 50%;
+            width: 8rem;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        i {
+            font-size: 8rem;
+            color: var(--text-color);
+        }
+    }
+
+    .text {
+        h1 {
+            margin: 0;
+            font-size: 1.6em;
+        }
+
+        p {
+            margin: 0;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .6rem;
+    height: auto;
+}
+
+.link-block {
+    border-radius: var(--border-radius);
+    background-color: var(--block-bg);
+    color: var(--text-color);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    padding: .8rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    max-width: 100%;
+    gap: .6rem;
+
+    &:hover {
+        background-color: var(--block-hover-bg);
+        box-shadow: 0 0 1rem var(--block-hover-bg);
+    }
+
+    div.icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 3rem;
+        text-align: center;
+
+        img {
+            border-radius: 50%;
+            width: 3rem;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        i {
+            font-size: 3rem;
+            width: 3rem;
+            text-align: center;
+            color: var(--text-color);
+        }
+    }
+
+    div.text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        h2 {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 0 0 .2rem 0;
+        }
+
+        p {
+            font-size: 1rem;
+            margin: 0;
+        }
+    }
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    p {
+        margin: 0;
+    }
+
+    ul, ol {
+        margin: 0;
+        text-align: left;
+    }
+}
+
+.image-block {
+    border-radius: var(--border-radius);
+    background-color: var(--block-bg);
+    color: var(--text-color);
+    backdrop-filter: blur(3px);
+    align-items: center;
+    padding: .6rem .6rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    max-width: 100%;
+
+    &:hover {
+        background-color: var(--block-hover-bg);
+        box-shadow: 0 0 1rem var(--block-hover-bg);
+    }
+
+    .image {
+        img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            object-fit: cover;
+        }
+    }
+
+    .text {
+        p {
+            color: var(--text-color);
+            margin: 0;
+            line-height: 1;
+        }
+    }
+}
+
+.footer-block {
+    p {
+        margin: 0;
+        line-height: 1;
+    }
+}
+
+details[open] > summary {
+  margin-bottom: .6rem;
+}
+
+small {
+    font-size: .8rem;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}

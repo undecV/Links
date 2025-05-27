@@ -60,9 +60,9 @@ div.container {
   justify-content: center;
 }
 .header-block .icon {
-  display: flex;
-  align-items: center;
   text-align: center;
+  width: 8rem;
+  aspect-ratio: 1/1;
   margin: 0 0 1rem 0;
 }
 .header-block .icon img {
@@ -185,6 +185,7 @@ div.container {
 }
 .image-block .image img {
   width: 100%;
+  height: auto;
   border-radius: var(--border-radius);
   -o-object-fit: cover;
      object-fit: cover;

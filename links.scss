@@ -60,9 +60,9 @@ div.container {
     justify-content: center;
 
     .icon {
-        display: flex;
-        align-items: center;
         text-align: center;
+        width: 8rem;
+        aspect-ratio: 1 / 1;
         margin: 0 0 1rem 0;
 
         img {
@@ -200,6 +200,7 @@ div.container {
     .image {
         img {
             width: 100%;
+            height: auto;
             border-radius: var(--border-radius);
             object-fit: cover;
         }

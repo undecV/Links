@@ -150,12 +150,18 @@ div.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.6rem;
+}
+.text-block h2 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
 }
 .text-block p {
   margin: 0;
 }
-.text-block ul, .text-block ol {
+.text-block ul,
+.text-block ol {
   margin: 0;
   text-align: left;
 }
@@ -191,6 +197,10 @@ div.container {
 .footer-block p {
   margin: 0;
   line-height: 1;
+}
+
+summary {
+  font-size: 1.2rem;
 }
 
 details[open] > summary {

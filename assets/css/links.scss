@@ -1,0 +1,770 @@
+@use "sass:map";
+@use "catppuccin";
+
+@layer reset, theme, base, layout, components, utilities;
+
+@mixin theme($flavor) {
+  @each $name, $value in map.get(catppuccin.$palette, $flavor) {
+    --lk-#{$name}: #{$value};
+  }
+}
+
+@mixin material-surface($color, $opacity) {
+  --lk-surface-color: #{$color};
+  --lk-surface-opacity: #{$opacity};
+
+  background-color: $color;
+  background-color: color-mix(
+    in srgb,
+    var(--lk-surface-color) var(--lk-surface-opacity),
+    transparent
+  );
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--lk-overlay0) var(--lk-border-opacity),
+      transparent
+    );
+}
+
+@mixin interactive-surface {
+  transition:
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+
+  box-shadow:
+    inset 0 1px 0
+      color-mix(in srgb, var(--lk-rosewater) 16%, transparent),
+    0 8px 24px -16px
+      color-mix(in srgb, var(--lk-shadow-color) 40%, transparent);
+
+  &:hover,
+  &:focus-visible {
+    --lk-surface-color: color-mix(
+      in srgb,
+      var(--lk-surface0) 65%,
+      var(--lk-surface1)
+    );
+    --lk-surface-opacity: var(--lk-block-hover-opacity);
+
+    border-color: color-mix(
+      in srgb,
+      var(--lk-overlay1) 65%,
+      transparent
+    );
+    box-shadow:
+      inset 0 1px 0
+        color-mix(in srgb, var(--lk-rosewater) 28%, transparent),
+      0 12px 32px -14px
+        color-mix(in srgb, var(--lk-shadow-color) 55%, transparent);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    --lk-surface-color: color-mix(
+      in srgb,
+      var(--lk-surface0) 65%,
+      var(--lk-surface2)
+    );
+    --lk-surface-opacity: var(--lk-block-active-opacity);
+
+    border-color: color-mix(
+      in srgb,
+      var(--lk-overlay2) 80%,
+      transparent
+    );
+    box-shadow: inset 0 0 0 0.08rem
+      color-mix(in srgb, var(--lk-overlay2) 30%, transparent);
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--lk-mauve);
+    outline-offset: 3px;
+  }
+}
+
+@mixin interactive-text-link(
+  $primary-color: var(--lk-blue),
+  $visited-color: var(--lk-mauve)
+) {
+  a {
+    color: $primary-color;
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 150ms ease;
+
+    &:visited {
+      color: $visited-color;
+    }
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
+
+    &:focus-visible {
+      border-radius: 0.15em;
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
+      text-decoration-color: currentColor;
+    }
+
+    &:active {
+      text-decoration-thickness: 2px;
+    }
+  }
+}
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    min-block-size: 100%;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  p,
+  figure,
+  ul,
+  ol {
+    margin: 0;
+  }
+
+  img {
+    max-inline-size: 100%;
+  }
+}
+
+@layer theme {
+  :root {
+    color-scheme: light;
+    @include theme("latte");
+
+    --lk-radius: 1rem;
+    --lk-font-sans: system-ui, sans-serif;
+
+    // Solid is the fallback for missing or invalid data-material values.
+    --lk-container-opacity: 100%;
+    --lk-section-opacity: 100%;
+    --lk-block-opacity: 100%;
+    --lk-block-hover-opacity: 100%;
+    --lk-block-active-opacity: 100%;
+    --lk-border-opacity: 45%;
+    --lk-material-backdrop: none;
+    --lk-material-wallpaper-tint: 35%;
+    --lk-material-wallpaper-blur: 0px;
+    --lk-material-wallpaper-saturation: 100%;
+    --lk-shadow-color: var(--lk-text);
+    --lk-rainbow-gradient: linear-gradient(
+      45deg,
+      var(--lk-red) 0% 16.666%,
+      var(--lk-peach) 16.666% 33.333%,
+      var(--lk-yellow) 33.333% 50%,
+      var(--lk-green) 50% 66.666%,
+      var(--lk-blue) 66.666% 83.333%,
+      var(--lk-mauve) 83.333% 100%
+    );
+
+    // Wallpaper processing is opt-in.
+    --lk-wallpaper-tint: 0%;
+    --lk-wallpaper-blur: 0px;
+    --lk-wallpaper-saturation: 100%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      @include theme("mocha");
+      --lk-shadow-color: var(--lk-crust);
+    }
+  }
+
+  body[data-material="solid"] {
+    --lk-container-opacity: 100%;
+    --lk-section-opacity: 100%;
+    --lk-block-opacity: 100%;
+    --lk-block-hover-opacity: 100%;
+    --lk-block-active-opacity: 100%;
+    --lk-border-opacity: 45%;
+    --lk-material-backdrop: none;
+    --lk-material-wallpaper-tint: 35%;
+    --lk-material-wallpaper-blur: 0px;
+    --lk-material-wallpaper-saturation: 100%;
+  }
+
+  body[data-material="mica"] {
+    --lk-container-opacity: 28%;
+    --lk-section-opacity: 40%;
+    --lk-block-opacity: 68%;
+    --lk-block-hover-opacity: 82%;
+    --lk-block-active-opacity: 90%;
+    --lk-border-opacity: 35%;
+    --lk-material-backdrop: blur(12px);
+    --lk-material-wallpaper-tint: 24%;
+    --lk-material-wallpaper-blur: 2px;
+    --lk-material-wallpaper-saturation: 90%;
+  }
+
+  body[data-material="acrylic"] {
+    --lk-container-opacity: 12%;
+    --lk-section-opacity: 26%;
+    --lk-block-opacity: 50%;
+    --lk-block-hover-opacity: 70%;
+    --lk-block-active-opacity: 80%;
+    --lk-border-opacity: 30%;
+    --lk-material-backdrop: blur(24px);
+    --lk-material-wallpaper-tint: 24%;
+    --lk-material-wallpaper-blur: 8px;
+    --lk-material-wallpaper-saturation: 115%;
+  }
+
+  body[data-wallpaper-effect="material"] {
+    --lk-wallpaper-tint: var(--lk-material-wallpaper-tint);
+    --lk-wallpaper-blur: var(--lk-material-wallpaper-blur);
+    --lk-wallpaper-saturation: var(--lk-material-wallpaper-saturation);
+  }
+}
+
+@layer base {
+  html {
+    background-color: var(--lk-crust);
+  }
+
+  body {
+    position: relative;
+    isolation: isolate;
+    overflow-x: clip;
+    display: grid;
+    justify-items: center;
+    min-block-size: 100dvb;
+    padding-block: 2rem;
+    padding-inline: 1rem;
+
+    color: var(--lk-text);
+    background-color: var(--lk-crust);
+    font-family: var(--lk-font-sans);
+  }
+
+  .lk-wallpaper-source {
+    display: contents;
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .lk-wallpaper {
+    position: fixed;
+    z-index: -2;
+    inset-block-start: calc(-1rem - var(--lk-wallpaper-blur));
+    inset-inline-start: calc(-1rem - var(--lk-wallpaper-blur));
+    inline-size: calc(
+      100% + 2rem + var(--lk-wallpaper-blur) + var(--lk-wallpaper-blur)
+    );
+    max-inline-size: none;
+    block-size: calc(
+      100% + 2rem + var(--lk-wallpaper-blur) + var(--lk-wallpaper-blur)
+    );
+
+    pointer-events: none;
+    user-select: none;
+    object-fit: cover;
+    filter: blur(var(--lk-wallpaper-blur))
+      saturate(var(--lk-wallpaper-saturation));
+  }
+
+  body::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+
+    content: "";
+    pointer-events: none;
+    background-color: color-mix(
+      in srgb,
+      var(--lk-crust) var(--lk-wallpaper-tint),
+      transparent
+    );
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  small {
+    font-size: 0.8em;
+  }
+}
+
+@layer layout {
+  .lk-container {
+    @include material-surface(
+      var(--lk-mantle),
+      var(--lk-container-opacity)
+    );
+    --lk-background-opacity: var(--lk-container-opacity);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    inline-size: min(26rem, 100%);
+    padding-block: 2.5rem;
+    padding-inline: clamp(1rem, 6vw, 2rem);
+    gap: 1.25rem;
+
+    text-align: center;
+    border-radius: var(--lk-radius);
+    backdrop-filter: var(--lk-material-backdrop);
+  }
+
+  .lk-section {
+    @include material-surface(var(--lk-base), var(--lk-section-opacity));
+    --lk-background-opacity: var(--lk-section-opacity);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    inline-size: 100%;
+    padding: 1rem;
+    gap: 0.8rem;
+
+    text-align: center;
+    border-radius: var(--lk-radius);
+  }
+}
+
+@layer components {
+  :where(
+    .lk-block-header,
+    .lk-block-link,
+    .lk-block-text,
+    .lk-block-figure,
+    .lk-block-footer,
+    .lk-block-meta
+  ) {
+    --lk-surface-color: var(--lk-surface0);
+    --lk-surface-opacity: var(--lk-block-opacity);
+    --lk-background-opacity: var(--lk-block-opacity);
+    border-radius: var(--lk-radius);
+  }
+
+  .lk-block-icon {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    text-align: center;
+    inline-size: var(--lk-icon-size);
+    aspect-ratio: 1;
+
+    > img {
+      display: block;
+      inline-size: 100%;
+      block-size: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+
+    > i {
+      // Font Awesome glyph canvases can be up to 1.25em wide. Let the icon
+      // keep its intrinsic width, then cap its font size so it fits the slot.
+      --fa-display: block;
+      --fa-width: auto;
+
+      display: block;
+
+      font-size: min(
+        var(--lk-icon-glyph-size),
+        calc(var(--lk-icon-size) * 0.85)
+      );
+      line-height: 1;
+      text-align: center;
+
+      &::before {
+        display: block;
+        line-height: 1;
+      }
+    }
+  }
+
+  .lk-block-header {
+    --lk-icon-size: 6rem;
+    --lk-icon-glyph-size: 6rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    inline-size: 100%;
+    padding: 1.25rem;
+    gap: 1.2rem;
+
+    .lk-block-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+  }
+
+  .lk-block-link {
+    @include material-surface(var(--lk-surface0), var(--lk-block-opacity));
+    @include interactive-surface;
+
+    --lk-icon-size: 3rem;
+    --lk-icon-glyph-size: 1.6rem;
+
+    display: flex;
+    align-items: center;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    padding-block: 0.8rem;
+    padding-inline: 1rem;
+    gap: 0.6rem;
+
+    .lk-block-content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      min-inline-size: 0;
+      gap: 0.4rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.2;
+    }
+
+  }
+
+  .lk-block-text {
+    @include interactive-text-link;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    inline-size: 100%;
+    padding: 1rem;
+    gap: 0.6rem;
+    text-align: start;
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    ul,
+    ol {
+      padding-inline-start: 1.6rem;
+      text-align: start;
+    }
+  }
+
+  .lk-block-figure {
+    @include material-surface(var(--lk-surface0), var(--lk-block-opacity));
+
+    inline-size: 100%;
+    padding: 0.6rem;
+
+    &:is(a) {
+      @include interactive-surface;
+    }
+
+    > figure {
+      margin: 0;
+    }
+
+    img {
+      display: block;
+      inline-size: 100%;
+      block-size: auto;
+      border-radius: calc(var(--lk-radius) - 0.25rem);
+      object-fit: cover;
+    }
+
+    figcaption {
+      margin-block-start: 0.6rem;
+      color: var(--lk-subtext0);
+      font-size: 0.8rem;
+      line-height: 1.2;
+    }
+  }
+
+  .lk-block-footer {
+    @include interactive-text-link;
+    inline-size: 100%;
+    padding: 1rem;
+
+    p {
+      line-height: 1.2;
+    }
+  }
+
+  .lk-block-meta {
+    inline-size: 100%;
+    padding: 0.75rem;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      display: inline-flex;
+      align-items: baseline;
+    }
+
+    li:not(:last-child)::after {
+      margin-inline: 0.35em;
+
+      content: "\00b7";
+      color: inherit;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-line: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.2em;
+      transition: text-decoration-color 150ms ease;
+
+      &:hover {
+        text-decoration-color: currentColor;
+      }
+
+      &:focus-visible {
+        border-radius: 0.15em;
+        outline: 2px solid currentColor;
+        outline-offset: 3px;
+        text-decoration-color: currentColor;
+      }
+
+      &:active {
+        text-decoration-thickness: 0.12em;
+      }
+    }
+  }
+
+  details.lk-section {
+    display: block;
+    padding: 0;
+
+    > summary {
+      position: relative;
+      display: block;
+      padding-block: 0.8rem;
+      padding-inline: 1rem 2.5rem;
+
+      color: var(--lk-text);
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: start;
+      list-style: none;
+      cursor: pointer;
+      user-select: none;
+
+      &::after {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-end: 1rem;
+        inline-size: 0.5rem;
+        block-size: 0.5rem;
+        border-inline-end: 2px solid currentColor;
+        border-block-end: 2px solid currentColor;
+
+        content: "";
+        transform: translateY(-50%) rotate(45deg);
+        transition: transform 200ms ease;
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--lk-mauve);
+        outline-offset: 3px;
+      }
+    }
+
+    &[open] > summary::after {
+      transform: translateY(-50%) rotate(225deg);
+    }
+
+    &::details-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-inline: 1rem;
+      gap: 0.6rem;
+    }
+
+    &[open]::details-content {
+      padding-block-end: 1rem;
+    }
+  }
+}
+
+@layer utilities {
+  // Apply to a text-bearing element such as a heading, link, or span.
+  .is-rainbow {
+    // A readable fallback for browsers without text background clipping.
+    color: var(--lk-mauve);
+
+    @supports (background-clip: text) {
+      color: transparent;
+      background-image: var(--lk-rainbow-gradient);
+      background-clip: text;
+    }
+
+    &::selection,
+    *::selection {
+      color: var(--lk-base);
+      background-color: var(--lk-text);
+    }
+  }
+
+  // A visual spoiler: hover it or focus it from the keyboard to reveal it.
+  .is-spoiler {
+    padding-inline: 0.25em;
+    border-radius: 0.2em;
+
+    color: transparent;
+    background-color: var(--lk-overlay0);
+    cursor: pointer;
+    user-select: none;
+    transition:
+      color 150ms ease,
+      background-color 150ms ease;
+
+    &:is(:hover, :focus) {
+      color: var(--lk-text);
+      background-color: var(--lk-surface2);
+      user-select: text;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--lk-mauve);
+      outline-offset: 2px;
+    }
+  }
+
+  .has-background {
+    --lk-surface-opacity: var(--lk-background-opacity, 100%);
+
+    background-color: var(--lk-surface-color);
+    background-color: color-mix(
+      in srgb,
+      var(--lk-surface-color) var(--lk-surface-opacity),
+      transparent
+    );
+    border-color: color-mix(
+      in srgb,
+      var(--lk-overlay0) var(--lk-border-opacity),
+      transparent
+    );
+  }
+
+  @each $name, $value in map.get(catppuccin.$palette, "latte") {
+    .is-#{$name} {
+      color: var(--lk-#{$name});
+    }
+
+    .is-bg-#{$name} {
+      background-color: var(--lk-#{$name});
+    }
+  }
+
+  .is-rounded {
+    border-radius: 50%;
+  }
+
+  @each $alignment in left, center, right, justify {
+    .is-#{$alignment}-aligned {
+      text-align: $alignment;
+    }
+  }
+
+  .has-no-background {
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+  }
+
+  .has-no-padding {
+    padding: 0;
+  }
+
+  @media (forced-colors: active) {
+    .is-rainbow {
+      color: CanvasText;
+      background-image: none;
+    }
+
+    .is-spoiler {
+      color: Canvas;
+      background-color: CanvasText;
+
+      &:is(:hover, :focus) {
+        color: CanvasText;
+        background-color: Canvas;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto;
+      transition-duration: 0s;
+      animation-duration: 0s;
+      animation-iteration-count: 1;
+    }
+  }
+}

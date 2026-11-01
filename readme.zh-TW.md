@@ -47,7 +47,7 @@ lk-container
 | `lk-block-footer` | 來源、版權與頁尾資訊 |
 | `lk-block-meta` | 精簡的次要導覽 |
 
-`lk-block-icon` 與 `lk-block-content` 是內部輔助 class，不是額外的階層。
+`lk-block-icon`、`lk-block-content` 與 `lk-details-content` 是內部輔助 class，不是額外的階層。在 `details` section 裡，將 `summary` 之後的所有內容包進 `lk-details-content`，即可啟用原生 CSS 展開動畫。
 
 ### Icon
 

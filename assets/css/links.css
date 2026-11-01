@@ -595,13 +595,26 @@
     transform: translateY(-50%) rotate(225deg);
   }
   details.lk-section::details-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 220ms ease, opacity 160ms ease, content-visibility 220ms allow-discrete;
+  }
+  details.lk-section[open]::details-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+  }
+  details.lk-section > .lk-details-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-block-size: 0;
+    overflow: hidden;
     padding-inline: 1rem;
     gap: 0.6rem;
+    transition: padding-block-end 220ms ease;
   }
-  details.lk-section[open]::details-content {
+  details.lk-section[open] > .lk-details-content {
     padding-block-end: 1rem;
   }
 }
@@ -856,6 +869,9 @@
       transition-duration: 0s;
       animation-duration: 0s;
       animation-iteration-count: 1;
+    }
+    details::details-content {
+      transition-duration: 0s;
     }
   }
 }/*# sourceMappingURL=links.css.map */

@@ -47,7 +47,7 @@ Use native elements for their intended meaning. A section may be a `section`, `n
 | `lk-block-footer` | Credits, copyright, and closing information |
 | `lk-block-meta` | Compact secondary navigation |
 
-`lk-block-icon` and `lk-block-content` are internal helpers, not additional hierarchy levels.
+`lk-block-icon`, `lk-block-content`, and `lk-details-content` are internal helpers, not additional hierarchy levels. In a `details` section, wrap everything after `summary` in `lk-details-content` to enable the native CSS disclosure animation.
 
 ### Icons
 

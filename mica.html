@@ -150,251 +150,261 @@
 
       <details class="lk-section" id="components">
         <summary>Component <code>lk-block-header</code></summary>
-        <article class="lk-block-text">
-          <p>
-            A header may use either an image or a Font Awesome icon. Keep only
-            one child inside each <code>lk-block-icon</code> slot.
-          </p>
-        </article>
+        <div class="lk-details-content">
+          <article class="lk-block-text">
+            <p>
+              A header may use either an image or a Font Awesome icon. Keep only
+              one child inside each <code>lk-block-icon</code> slot.
+            </p>
+          </article>
 
-        <header class="lk-block-header has-no-background">
-          <div class="lk-block-icon" aria-hidden="true">
-            <i class="fa-solid fa-user-astronaut is-peach"></i>
-          </div>
-          <div class="lk-block-content">
-            <h2>Icon header</h2>
-            <p>Useful when no avatar is available</p>
-          </div>
-        </header>
+          <header class="lk-block-header has-no-background">
+            <div class="lk-block-icon" aria-hidden="true">
+              <i class="fa-solid fa-user-astronaut is-peach"></i>
+            </div>
+            <div class="lk-block-content">
+              <h2>Icon header</h2>
+              <p>Useful when no avatar is available</p>
+            </div>
+          </header>
 
-        <header class="lk-block-header has-no-background">
-          <div class="lk-block-icon">
-            <img
-              class="is-rounded"
-              src="./assets/images/avatar.512.png"
-              width="96"
-              height="96"
-              alt="Example avatar"
-            />
-          </div>
-          <div class="lk-block-content">
-            <h2>Image header</h2>
-            <p>Use <code>is-rounded</code> for an avatar</p>
-          </div>
-        </header>
+          <header class="lk-block-header has-no-background">
+            <div class="lk-block-icon">
+              <img
+                class="is-rounded"
+                src="./assets/images/avatar.512.png"
+                width="96"
+                height="96"
+                alt="Example avatar"
+              />
+            </div>
+            <div class="lk-block-content">
+              <h2>Image header</h2>
+              <p>Use <code>is-rounded</code> for an avatar</p>
+            </div>
+          </header>
+        </div>
       </details>
 
       <details class="lk-section" open>
         <summary>Component <code>lk-block-link</code></summary>
-        <article class="lk-block-text">
-          <p>
-            A link block looks like a button but remains an anchor. Its icon
-            slot accepts either one Font Awesome <code>i</code> or one
-            <code>img</code>.
-          </p>
-        </article>
+        <div class="lk-details-content">
+          <article class="lk-block-text">
+            <p>
+              A link block looks like a button but remains an anchor. Its icon
+              slot accepts either one Font Awesome <code>i</code> or one
+              <code>img</code>.
+            </p>
+          </article>
 
-        <a
-          class="lk-block-link"
-          href="https://github.com/undecv/Links"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-github"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Font Awesome icon</h2>
-            <p>Open the Links repository</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://github.com/undecv/Links"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-github"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Font Awesome icon</h2>
+              <p>Open the Links repository</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://github.com/undecv"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon">
-            <img
-              class="is-rounded"
-              src="./assets/images/avatar.512.png"
-              width="48"
-              height="48"
-              alt=""
-            />
-          </span>
-          <div class="lk-block-content">
-            <h2>Image icon</h2>
-            <p>Add <code>is-rounded</code> for a circular crop</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://github.com/undecv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon">
+              <img
+                class="is-rounded"
+                src="./assets/images/avatar.512.png"
+                width="48"
+                height="48"
+                alt=""
+              />
+            </span>
+            <div class="lk-block-content">
+              <h2>Image icon</h2>
+              <p>Add <code>is-rounded</code> for a circular crop</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://github.com/undecv"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon">
-            <img
-              src="./assets/images/avatar.512.png"
-              width="48"
-              height="48"
-              alt=""
-            />
-          </span>
-          <div class="lk-block-content">
-            <h2>Square image icon</h2>
-            <p>Omit <code>is-rounded</code> to keep square corners</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://github.com/undecv"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon">
+              <img
+                src="./assets/images/avatar.512.png"
+                width="48"
+                height="48"
+                alt=""
+              />
+            </span>
+            <div class="lk-block-content">
+              <h2>Square image icon</h2>
+              <p>Omit <code>is-rounded</code> to keep square corners</p>
+            </div>
+          </a>
 
-        <a class="lk-block-link" href="#recipes">
-          <div class="lk-block-content">
-            <h2>Link without an icon</h2>
-            <p>The content remains centered without an icon slot</p>
-          </div>
-        </a>
+          <a class="lk-block-link" href="#recipes">
+            <div class="lk-block-content">
+              <h2>Link without an icon</h2>
+              <p>The content remains centered without an icon slot</p>
+            </div>
+          </a>
 
-        <a class="lk-block-link has-no-background" href="#utilities">
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-solid fa-border-none"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Link without a surface</h2>
-            <p>Add <code>has-no-background</code></p>
-          </div>
-        </a>
+          <a class="lk-block-link has-no-background" href="#utilities">
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-solid fa-border-none"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Link without a surface</h2>
+              <p>Add <code>has-no-background</code></p>
+            </div>
+          </a>
+        </div>
       </details>
 
       <details class="lk-section" open>
         <summary>Component <code>lk-block-text</code></summary>
-        <article class="lk-block-text">
-          <h2>Long-form content</h2>
-          <p>
-            Text blocks support headings, paragraphs,
-            <a href="https://github.com/undecv/Links">inline links</a>, and
-            native lists without pretending to be a card.
-          </p>
-          <p>
-            Inline prose can use <strong>bold</strong>, <em>italic</em>,
-            <code>inline code</code>, <del>deleted text</del>, and
-            <span class="is-spoiler" tabindex="0">a well-kept secret</span>.
-          </p>
-          <h3>Good uses</h3>
-          <ul>
-            <li>A short introduction</li>
-            <li>Project notes or contact details</li>
-            <li>Small pieces of documentation like this page</li>
-          </ul>
-        </article>
-        <article class="lk-block-text has-background">
-          <h2>Text with a surface</h2>
-          <p>
-            Text blocks are transparent by default. Add
-            <code>has-background</code> when the content needs stronger
-            separation from the wallpaper.
-          </p>
-        </article>
+        <div class="lk-details-content">
+          <article class="lk-block-text">
+            <h2>Long-form content</h2>
+            <p>
+              Text blocks support headings, paragraphs,
+              <a href="https://github.com/undecv/Links">inline links</a>, and
+              native lists without pretending to be a card.
+            </p>
+            <p>
+              Inline prose can use <strong>bold</strong>, <em>italic</em>,
+              <code>inline code</code>, <del>deleted text</del>, and
+              <span class="is-spoiler" tabindex="0">a well-kept secret</span>.
+            </p>
+            <h3>Good uses</h3>
+            <ul>
+              <li>A short introduction</li>
+              <li>Project notes or contact details</li>
+              <li>Small pieces of documentation like this page</li>
+            </ul>
+          </article>
+          <article class="lk-block-text has-background">
+            <h2>Text with a surface</h2>
+            <p>
+              Text blocks are transparent by default. Add
+              <code>has-background</code> when the content needs stronger
+              separation from the wallpaper.
+            </p>
+          </article>
+        </div>
       </details>
 
       <details class="lk-section" open>
         <summary>Component <code>lk-block-figure</code></summary>
-        <article class="lk-block-text">
-          <p>
-            Put a semantic <code>figure</code> inside an anchor when the entire
-            image should be clickable. The first example keeps the default
-            surface, border, and padding. A <code>figcaption</code> is useful
-            but optional when the image already has an appropriate
-            <code>alt</code> description.
-          </p>
-        </article>
-        <a
-          class="lk-block-figure"
-          href="https://github.com/undecv/Links"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <figure>
-            <img
-              src="https://placehold.co/640x240/8839ef/eff1f5?text=Default+figure"
-              width="640"
-              height="240"
-              alt="Placeholder demonstrating the default figure block"
-            />
-            <figcaption>Default surface, border, and padding</figcaption>
-          </figure>
-        </a>
-        <a
-          class="lk-block-figure has-no-background has-no-padding"
-          href="https://github.com/undecv/Links"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <figure>
-            <img
-              src="https://placehold.co/640x240/8839ef/eff1f5?text=lk-block-figure"
-              width="640"
-              height="240"
-              alt="Placeholder demonstrating a figure block"
-            />
-            <figcaption>
-              <code>has-no-background has-no-padding</code>
-            </figcaption>
-          </figure>
-        </a>
+        <div class="lk-details-content">
+          <article class="lk-block-text">
+            <p>
+              Put a semantic <code>figure</code> inside an anchor when the entire
+              image should be clickable. The first example keeps the default
+              surface, border, and padding. A <code>figcaption</code> is useful
+              but optional when the image already has an appropriate
+              <code>alt</code> description.
+            </p>
+          </article>
+          <a
+            class="lk-block-figure"
+            href="https://github.com/undecv/Links"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <figure>
+              <img
+                src="https://placehold.co/640x240/8839ef/eff1f5?text=Default+figure"
+                width="640"
+                height="240"
+                alt="Placeholder demonstrating the default figure block"
+              />
+              <figcaption>Default surface, border, and padding</figcaption>
+            </figure>
+          </a>
+          <a
+            class="lk-block-figure has-no-background has-no-padding"
+            href="https://github.com/undecv/Links"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <figure>
+              <img
+                src="https://placehold.co/640x240/8839ef/eff1f5?text=lk-block-figure"
+                width="640"
+                height="240"
+                alt="Placeholder demonstrating a figure block"
+              />
+              <figcaption>
+                <code>has-no-background has-no-padding</code>
+              </figcaption>
+            </figure>
+          </a>
 
-        <figure class="lk-block-figure">
-          <img
-            src="https://placehold.co/640x240/8839ef/eff1f5?text=Static+figure"
-            width="640"
-            height="240"
-            alt="Placeholder demonstrating a static figure block"
-          />
-          <figcaption>A figure without an anchor is not interactive</figcaption>
-        </figure>
-
-        <a
-          class="lk-block-figure has-no-background has-no-padding"
-          href="https://github.com/undecv/Links"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <figure>
+          <figure class="lk-block-figure">
             <img
-              src="https://placehold.co/640x240/8839ef/eff1f5?text=Image+without+caption"
+              src="https://placehold.co/640x240/8839ef/eff1f5?text=Static+figure"
               width="640"
               height="240"
-              alt="Clickable figure presented without a visible caption"
+              alt="Placeholder demonstrating a static figure block"
             />
+            <figcaption>A figure without an anchor is not interactive</figcaption>
           </figure>
-        </a>
+
+          <a
+            class="lk-block-figure has-no-background has-no-padding"
+            href="https://github.com/undecv/Links"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <figure>
+              <img
+                src="https://placehold.co/640x240/8839ef/eff1f5?text=Image+without+caption"
+                width="640"
+                height="240"
+                alt="Clickable figure presented without a visible caption"
+              />
+            </figure>
+          </a>
+        </div>
       </details>
 
       <details class="lk-section" open>
         <summary>Materials and wallpaper</summary>
-        <article class="lk-block-text">
-          <h2>Three material profiles</h2>
-          <ul>
-            <li><code>data-material="solid"</code></li>
-            <li><code>data-material="mica"</code></li>
-            <li><code>data-material="acrylic"</code></li>
-          </ul>
-          <p>
-            Add <code>data-wallpaper-effect="material"</code> to process the
-            wallpaper with the selected material profile. A native
-            <code>picture</code> can provide separate light and dark images.
-          </p>
-          <p>
-            Add <code>hidden</code> to <code>lk-wallpaper-source</code>, or
-            omit the picture entirely, to disable the wallpaper.
-          </p>
-          <p>
-            The entire color system uses Catppuccin Latte and Mocha, following
-            <code>prefers-color-scheme</code> without a manual theme state.
-          </p>
-        </article>
+        <div class="lk-details-content">
+          <article class="lk-block-text">
+            <h2>Three material profiles</h2>
+            <ul>
+              <li><code>data-material="solid"</code></li>
+              <li><code>data-material="mica"</code></li>
+              <li><code>data-material="acrylic"</code></li>
+            </ul>
+            <p>
+              Add <code>data-wallpaper-effect="material"</code> to process the
+              wallpaper with the selected material profile. A native
+              <code>picture</code> can provide separate light and dark images.
+            </p>
+            <p>
+              Add <code>hidden</code> to <code>lk-wallpaper-source</code>, or
+              omit the picture entirely, to disable the wallpaper.
+            </p>
+            <p>
+              The entire color system uses Catppuccin Latte and Mocha, following
+              <code>prefers-color-scheme</code> without a manual theme state.
+            </p>
+          </article>
+        </div>
       </details>
 
       <section class="lk-section" aria-labelledby="utilities">
@@ -437,169 +447,171 @@
 
       <details class="lk-section" id="recipes">
         <summary>Preset recipes</summary>
-        <article class="lk-block-text">
-          <h2>Copy, replace, and serve</h2>
-          <p>
-            These ready-made links preserve the larger example menu. Replace
-            the placeholder URLs and labels with your own content, then remove
-            any recipes you do not need.
-          </p>
-        </article>
+        <div class="lk-details-content">
+          <article class="lk-block-text">
+            <h2>Copy, replace, and serve</h2>
+            <p>
+              These ready-made links preserve the larger example menu. Replace
+              the placeholder URLs and labels with your own content, then remove
+              any recipes you do not need.
+            </p>
+          </article>
 
-        <a
-          class="lk-block-link"
-          href="https://t.me/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-telegram"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Join my Telegram</h2>
-            <p>Chat with me on Telegram</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://t.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-telegram"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Join my Telegram</h2>
+              <p>Chat with me on Telegram</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://linkedin.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-linkedin"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Connect on LinkedIn</h2>
-            <p>Expand your professional network</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-linkedin"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Connect on LinkedIn</h2>
+              <p>Expand your professional network</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://line.me/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-line"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Connect with me on LINE</h2>
-            <p>Chat with me on LINE</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://line.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-line"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Connect with me on LINE</h2>
+              <p>Chat with me on LINE</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://github.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-github"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Check my GitHub</h2>
-            <p>Explore my projects and contributions</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-github"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Check my GitHub</h2>
+              <p>Explore my projects and contributions</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://orcid.org/0000-0000-0000-0000"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-orcid"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>View my ORCID profile</h2>
-            <p>Discover my research contributions</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://orcid.org/0000-0000-0000-0000"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-orcid"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>View my ORCID profile</h2>
+              <p>Discover my research contributions</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://example.com/blog/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-solid fa-blog"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Visit my Blog</h2>
-            <p>Read my latest articles and thoughts</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://example.com/blog/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-solid fa-blog"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Visit my Blog</h2>
+              <p>Read my latest articles and thoughts</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://m.me/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-facebook-messenger"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Connect on Messenger</h2>
-            <p>Chat with me on Messenger</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://m.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-facebook-messenger"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Connect on Messenger</h2>
+              <p>Chat with me on Messenger</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://www.facebook.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-facebook"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Follow me on Facebook</h2>
-            <p>Keep up with my latest updates</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://www.facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-facebook"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Follow me on Facebook</h2>
+              <p>Keep up with my latest updates</p>
+            </div>
+          </a>
 
-        <a
-          class="lk-block-link"
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-brands fa-instagram"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Follow me on Instagram</h2>
-            <p>Explore my latest photos and stories</p>
-          </div>
-        </a>
+          <a
+            class="lk-block-link"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-brands fa-instagram"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Follow me on Instagram</h2>
+              <p>Explore my latest photos and stories</p>
+            </div>
+          </a>
 
-        <a class="lk-block-link" href="mailto:firstname@example.com">
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-solid fa-envelope"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Email me</h2>
-            <p>firstname@example.com</p>
-          </div>
-        </a>
+          <a class="lk-block-link" href="mailto:firstname@example.com">
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-solid fa-envelope"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Email me</h2>
+              <p>firstname@example.com</p>
+            </div>
+          </a>
 
-        <a class="lk-block-link" href="tel:+886900000000">
-          <span class="lk-block-icon" aria-hidden="true">
-            <i class="fa-solid fa-phone"></i>
-          </span>
-          <div class="lk-block-content">
-            <h2>Call me</h2>
-            <p>+886-900-000-000</p>
-          </div>
-        </a>
+          <a class="lk-block-link" href="tel:+886900000000">
+            <span class="lk-block-icon" aria-hidden="true">
+              <i class="fa-solid fa-phone"></i>
+            </span>
+            <div class="lk-block-content">
+              <h2>Call me</h2>
+              <p>+886-900-000-000</p>
+            </div>
+          </a>
+        </div>
       </details>
 
       <section class="lk-section" aria-labelledby="accessibility">
